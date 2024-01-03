@@ -1,5 +1,5 @@
-import NavBar from '@/scenes/navbar'
-import { useState } from 'react'
+import NavBar from '@/scenes/navbar';
+import { useState } from 'react';
 
 enum SelectedPage {
   Home = "home",
@@ -9,7 +9,9 @@ enum SelectedPage {
 }
 
 function App() {
-  const [selectedPage, setSelectedPage] = useState<SelectedPage>(SelectedPage.Home)
+  const [selectedPage, setSelectedPage] = useState<SelectedPage>(
+    SelectedPage.Home
+  );
 
   return (
     <div className="app bg-gray-20">

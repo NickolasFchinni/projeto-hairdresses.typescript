@@ -11,7 +11,7 @@ function Link({
   selectedPage,
   setSelectedPage,
 } : Props) {
-  const lowerCasePage = page.toLocaleLowerCase().replace(/ /g, "")
+  const lowerCasePage = page.toLocaleLowerCase().replace(/ /g, "");
 
   return (
     <AnchorLink
