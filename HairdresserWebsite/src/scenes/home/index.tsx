@@ -44,7 +44,17 @@ function Home({ setSelectedPage }: Props) {
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab consequatur nulla dolorem repellat quod debitis iste velit nihil perspiciatis, aliquam voluptate, vel quis, ad provident dolores maiores distinctio soluta minus?
             </p>
           </motion.div>
-          <div className='mt-8 flex items-center gap-8'>
+          <motion.div 
+            className='mt-8 flex items-center gap-8'
+            initial='hidden'
+            whileInView='visible'  
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ delay: .2, duration: .5 }}
+            variants={{
+              hidden: {opacity: 0, x:-50},
+              visible: {opacity:1, x:0},
+            }}
+          >
             <ActionButton setSelectedPage={setSelectedPage}>
               Join Now
             </ActionButton>
@@ -54,7 +64,7 @@ function Home({ setSelectedPage }: Props) {
             >
               <p>Learn More</p>
             </AnchorLink>
-          </div>
+          </motion.div>
         </div>
 
         <div className='flex basis-3/5 justify-center md:z-10 md:ml-40 md:mt-16 md:justify-items-end'>
