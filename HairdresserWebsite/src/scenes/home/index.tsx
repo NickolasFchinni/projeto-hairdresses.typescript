@@ -7,6 +7,8 @@ import SponsorRedBull from '@/assets/HomePageText.png'
 import SponsorForbes from '@/assets/HomePageText.png'
 import SponsorFortune from '@/assets/HomePageText.png'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
+import { motion } from 'framer-motion'
+motion
 
 type Props = {
   setSelectedPage: (value: SelectedPage) => void;
@@ -22,7 +24,17 @@ function Home({ setSelectedPage }: Props) {
     >
       <div className='md:flex mx-auto w-5/6 items-center justify-center md:h-5/6'>
         <div className='z-10 mt-32 md:basis-3/5'>
-          <div className='md:-mt-20'>
+          <motion.div 
+            className='md:-mt-20'
+            initial='hidden'
+            whileInView='visible'  
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: .5 }}
+            variants={{
+              hidden: {opacity: 0, x:-50},
+              visible: {opacity:1, x:0},
+            }}
+          >
             <div className='relative'>
               <div className='before:absolute before:-top-20 md:before:content-evolvetext before:-left-20 before:z-[-1]'>
                 <img src={HomePageText} alt="home-page-text" />
@@ -31,7 +43,7 @@ function Home({ setSelectedPage }: Props) {
             <p className='mt-8 text-sm'>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab consequatur nulla dolorem repellat quod debitis iste velit nihil perspiciatis, aliquam voluptate, vel quis, ad provident dolores maiores distinctio soluta minus?
             </p>
-          </div>
+          </motion.div>
           <div className='mt-8 flex items-center gap-8'>
             <ActionButton setSelectedPage={setSelectedPage}>
               Join Now
