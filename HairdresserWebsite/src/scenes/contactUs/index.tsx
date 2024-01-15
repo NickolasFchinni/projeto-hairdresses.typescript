@@ -9,7 +9,7 @@ type Props = {
 }
 
 function ContactUs({ setSelectedPage }: Props) {
-  const inputStyles = `mt-5 w-full rounded-lg bg-primary-300 px-5 py-3 placeholder-white`
+  const inputStyles = `mb-5 w-full rounded-lg bg-primary-300 px-5 py-3 placeholder-white`
 
   const {
     register,
@@ -61,7 +61,7 @@ function ContactUs({ setSelectedPage }: Props) {
               target="_blank"
               onSubmit={onSubmit}
               method="POST"
-              action="https://formsubmit.co/nulleyson@gmail.com"
+              action="https://formsubmit.co/teste@teste.com"
             >
               <input 
                 type="text"
@@ -120,6 +120,21 @@ function ContactUs({ setSelectedPage }: Props) {
                 SUBMIT
               </button>
             </form>
+          </motion.div>
+          <motion.div 
+            className="relative mt-16 basis-2/5 md:mt-0"
+            initial='hidden'
+            whileInView='visible'  
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ delay:0.2, duration: .5 }}
+            variants={{
+              hidden: {opacity: 0, y: 50},
+              visible: {opacity: 1, x: 0},
+            }}
+          >
+            <div className="md:before:content-evolvetext w-full before:absolute before:-bottom-20 before:-right-10 before:z-[-1]">
+              <img className="w-full" src={ContactUsPageGraphic} alt="contactus-graphic" />
+            </div>
           </motion.div>
         </div>
       </motion.div>
